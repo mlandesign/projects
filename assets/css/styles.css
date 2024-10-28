@@ -1,0 +1,687 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #666666;
+    --background-color: #ffffff;
+    --accent-color: #0066ff;
+    --dark-yellow: #FF9900;  /* Added your custom yellow */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+/* Add these base container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header Styles */
+header {
+    padding: 2rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--background-color);
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 32px;
+    height: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--dark-yellow); /* Updated to use custom yellow */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--dark-yellow); /* Updated to use custom yellow */
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Hero Section */
+.hero {
+    padding: 12rem 2rem 6rem;  /* Increased from 10rem to 12rem */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    max-width: 600px;
+}
+
+/* Projects Section */
+.project-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem 2rem;  /* Updated: 10rem for vertical gap (160px), 2rem for horizontal gap */
+}
+
+.project-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Add hover effects */
+.project-card:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    color: var(--secondary-color);
+}
+
+/* Contact Section */
+.contact {
+    background-color: #000;
+    color: white;
+    margin-top: 10rem;
+    padding: 6rem 0;  /* Increased padding */
+}
+
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-content h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.cta-button {
+    background-color: white;
+    color: black;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--dark-yellow);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: white;
+    padding: 1.5rem 0;  /* Reduced padding */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    font-weight: 300;  /* Thinner font weight */
+    color: rgba(255, 255, 255, 0.8);  /* Slightly reduced opacity */
+    font-size: 0.9rem;  /* Slightly smaller font size */
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;  /* Consistent spacing between links */
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);  /* Slightly reduced opacity */
+    text-decoration: none;
+    font-weight: 300;  /* Thinner font weight */
+    font-size: 0.9rem;  /* Slightly smaller font size */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;  /* Full opacity on hover */
+}
+
+/* Update the responsive design for footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* Add these new styles for the About page */
+
+/* About Hero Section */
+.about-hero {
+    padding: 12rem 2rem 4rem;  /* Increased from 10rem to 12rem */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.about-hero h1 em {
+    font-style: italic;
+}
+
+/* About Content Section */
+.about-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+}
+
+.about-text {
+    max-width: 800px;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+/* Update the highlight class */
+.highlight {
+    color: var(--dark-yellow);  /* Changed from primary-color to dark-yellow */
+    font-weight: 500;
+}
+
+/* The tool class can remain orange as it is */
+.tool {
+    color: var(--dark-yellow);
+    font-weight: 500;
+}
+
+.download-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.download-resume:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.download-resume span {
+    font-size: 1.25rem;
+}
+
+/* Experience Section */
+.experience {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+}
+
+.experience h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.job-list {
+    max-width: 800px;
+}
+
+.job {
+    margin-bottom: 4rem;
+}
+
+.job:last-child {
+    margin-bottom: 0;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.job h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.job-date {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.visit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.visit-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.visit-link span {
+    font-size: 1rem;
+}
+
+.job ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.job li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.job li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--dark-yellow);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Responsive Design for Experience Section */
+@media (max-width: 768px) {
+    .experience {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .job h3 {
+        font-size: 1.5rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+/* First, add the keyframes for fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add animation classes */
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Add different delays for different sections */
+.hero h1 {
+    animation-delay: 0.2s;
+}
+
+.hero p {
+    animation-delay: 0.4s;
+}
+
+.project-card:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.project-card:nth-child(4) {
+    animation-delay: 1s;
+}
+
+/* About page animations */
+.about-hero h1 {
+    animation-delay: 0.2s;
+}
+
+.about-grid h2 {
+    animation-delay: 0.3s;
+}
+
+.about-text p {
+    animation-delay: 0.4s;
+}
+
+.download-resume {
+    animation-delay: 0.6s;
+}
+
+.experience h2 {
+    animation-delay: 0.7s;
+}
+
+.job {
+    animation-delay: 0.8s;
+}
+
+/* Contact section animation */
+.contact-content {
+    animation-delay: 0.4s;
+}
+
+/* Update existing responsive styles and add new ones */
+
+/* Responsive styles for all screen sizes */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .about-hero h1 {
+        font-size: 3rem;
+    }
+
+    .contact-content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    nav {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero sections */
+    .hero, .about-hero {
+        padding: 10rem 1rem 3rem;  /* Increased from 8rem to 10rem for mobile */
+        text-align: center;
+    }
+
+    .hero h1, .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Project grid */
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 5rem;  /* Reduced spacing on mobile */
+    }
+
+    /* About page */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+
+    .about-text p {
+        text-align: center;
+    }
+
+    .download-resume {
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+
+    /* Experience section */
+    .experience {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .job h3, .job-date {
+        text-align: center;
+    }
+
+    .job ul {
+        text-align: left; /* Keep list items left-aligned for readability */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .visit-link {
+        margin: 1rem auto;
+    }
+
+    /* Contact section */
+    .contact {
+        padding: 3rem 0;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .contact-content h2 {
+        font-size: 1.75rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even smaller screens */
+    .hero h1, .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .job h3 {
+        font-size: 1.25rem;
+    }
+
+    .visit-link, .download-resume {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        gap: 0.75rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+}
+
+/* Add smooth scrolling for better mobile experience */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve touch targets on mobile */
+@media (hover: none) {
+    .nav-links a,
+    .project-card,
+    .cta-button,
+    .visit-link,
+    .download-resume {
+        padding: 0.8rem;
+    }
+}
+
+/* Keep desktop alignment left (default) for larger screens */
+@media (min-width: 769px) {
+    .hero, .about-hero, .about-grid, .experience, .job-header {
+        text-align: left;
+    }
+}
+
