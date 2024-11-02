@@ -14,11 +14,6 @@
                     <img src="assets/img/logo.svg" alt="Logo">
                 </a>
             </div>
-            <button class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <div class="nav-links">
                 <a href="index.html">Projects</a>
                 <a href="about.html">About</a>
@@ -29,89 +24,60 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1 class="fade-in">Hello, I'm Meng,<br>a UI/UX Designer.</h1>
-            <p class="fade-in">With a keen eye for aesthetics and a passion for crafting user-centric experiences, I specialize in transforming ideas into intuitive and impactful digital designs.</p>
-        </section>
+        <h1>Hello, I'm Meng,<br> a UI/UX Designer</h1>
+        <p>With a keen eye for aesthetics and a passion for crafting user-centric experiences, I specialize in transforming ideas into intuitive and impactful digital designs.</p>
 
-        <section class="projects">
-            <div class="project-grid">
-                <div class="project-card fade-in">
-                    <img src="assets/img/cover-yms.png" alt="Yard Management System">
-                    <h3>Yard Management System</h3>
-                    <p>Web Design, SaaS</p>
-                </div>
-                <div class="project-card fade-in">
-                    <img src="assets/img/cover-waytodrive.png" alt="Way to drive">
-                    <h3>Way to drive</h3>
-                    <p>App, Interaction Design</p>
-                </div>
-                <div class="project-card fade-in">
-                    <img src="assets/img/cover-serviceapp.png" alt="UNIS Shipping App">
-                    <h3>UNIS Shipping App</h3>
-                    <p>App Design</p>
-                </div>
-                <div class="project-card fade-in">
-                    <img src="assets/img/cover-vendorportal.png" alt="Vendor Portal">
-                    <h3>Vendor Portal - Invoice Generation</h3>
-                    <p>Responsive Web Design</p>
-                </div>
-                <div class="project-card fade-in">
-                    <img src="assets/img/cover-mystorybook.png" alt="My Story Book">
-                    <h3>My Story Book</h3>
-                    <p>App Design</p>
-                </div>
-                <div class="project-card fade-in">
-                    <a href="pickymon.html">
-                        <img src="assets/img/cover-pickymon.png" alt="Pickymon">
-                        <h3>Pickymon</h3>
-                        <p>Graphic Design, Illustration</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact">
-            <div class="contact-content fade-in">
-                <h2>Let's start creating together</h2>
-                <a href="#" class="cta-button">Let's Talk <span>→</span></a>
-            </div>
-        </section>
+        <div class="project-grid">
+            <a href="yms.html" class="project-card">
+                <img src="assets/img/cover-yms.png" alt="Yard Management System">
+                <h3>Yard Management System</h3>
+                <p>Web Design, SaaS</p>
+            </a>
+            <a href="waytodrive.html" class="project-card">
+                <img src="assets/img/cover-waytodrive.png" alt="Way to drive">
+                <h3>Way to drive</h3>
+                <p>App, Interaction Design</p>
+            </a>
+            <a href="unis-shipping.html" class="project-card">
+                <img src="assets/img/cover-serviceapp.png" alt="UNIS Shipping App">
+                <h3>UNIS Shipping App</h3>
+                <p>App Design</p>
+            </a>
+            <a href="vendor-portal.html" class="project-card">
+                <img src="assets/img/cover-vendorportal.png" alt="Vendor Portal">
+                <h3>Vendor Portal - Invoice Generation</h3>
+                <p>Responsive Web Design</p>
+            </a>
+            <a href="mystorybook.html" class="project-card">
+                <img src="assets/img/cover-mystorybook.png" alt="My Story Book">
+                <h3>My Story Book</h3>
+                <p>App Design</p>
+            </a>
+            <a href="pickymon.html" class="project-card">
+                <img src="assets/img/cover-pickymon.png" alt="Pickymon">
+                <h3>Pickymon</h3>
+                <p>Graphic Design, Illustration</p>
+            </a>
+        </div>
     </main>
 
+    <section class="contact">
+        <h1>Let's start creating together</h1>
+        <a href="#" class="lets-talk-btn">Let's Talk <span>→</span></a>
+    </section>
+
     <footer>
-        <div class="footer-content">
+        <div>
             <p>Designed by Meng Lan 2024</p>
-            <div class="footer-links">
-                <a href="index.html" target="_blank">Projects</a>
-                <a href="about.html" target="_blank">About</a>
+            <nav>
+                <a href="index.html">Projects</a>
+                <a href="about.html">About</a>
                 <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank">Resume</a>
                 <a href="https://www.linkedin.com/in/mlan14/" target="_blank">LinkedIn</a>
                 <a href="https://dribbble.com/mlan14" target="_blank">Dribbble</a>
-            </div>
+            </nav>
         </div>
     </footer>
 
-    <script>
-        // Hamburger menu functionality
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const body = document.body;
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                body.style.overflow = '';
-            });
-        });
-    </script>
 </body>
 </html>
