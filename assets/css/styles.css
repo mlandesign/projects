@@ -1,9 +1,7 @@
 :root {
     --primary-color: #000000;
     --secondary-color: #666666;
-    --background-color: #ffffff;
-    --accent-color: #0066ff;
-    --dark-yellow: #FF9900;  /* Added your custom yellow */
+    --background-color: #FFFFFF;
 }
 
 * {
@@ -13,92 +11,58 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--primary-color);
     background-color: var(--background-color);
 }
 
-/* Add these base container styles */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Header Styles */
-header {
-    padding: 1.5rem 0;
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
     z-index: 1000;
 }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .logo {
-    z-index: 1001;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
+    gap: 0.5rem;
 }
 
 .logo a {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     text-decoration: none;
 }
 
 .logo img {
-    width: 32px;
-    height: auto;
-    display: block;
+    height: 32px;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    color: var(--primary-color);
-}
-
-.logo-text h1 {
-    font-size: 1.25rem;
-    font-weight: 500;
     line-height: 1.2;
-    margin: 0;
-}
-
-.logo-text p {
-    font-size: 0.875rem;
-    color: var(--secondary-color);
-    margin: 0;
+    color: var(--primary-color);
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
-    align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--primary-color);
-    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
@@ -106,69 +70,512 @@ nav {
     color: var(--accent-color);
 }
 
-/* Hero Section */
-.hero {
-    padding: 12rem 2rem 6rem;  /* Increased from 10rem to 12rem */
+/* Project Container */
+.project-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 8rem 2rem 2rem;
 }
 
-.hero h1 {
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+h1 {
     font-size: 3.5rem;
-    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+/* Project Info */
+.project-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.info-group h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.info-group p {
+    color: var(--secondary-color);
+}
+
+/* Hero Image */
+.hero-image {
+    margin-bottom: 3rem;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* Project Intro */
+.project-intro {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.app-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 1rem;
+}
+
+.intro-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Background Section */
+.background {
+    margin-bottom: 3rem;
+}
+
+.background h2 {
+    font-size: 1rem;
     margin-bottom: 1.5rem;
+}
+
+/* Pain Points */
+.pain-points {
+    margin-bottom: 6rem;
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.point-card {
+    background: #F8F8F8;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.point-number {
+    width: 24px;
+    height: 24px;
+    background: #333333;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Problem Statement */
+.problem-statement {
+    margin-bottom: 3rem;
+}
+
+.problem-statement h2 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Persona Section */
+.persona {
+    margin-bottom: 3rem;
+}
+
+.persona h2 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.persona-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.persona-card img {
+    width: 100%;
+    display: block;
+}
+
+/* Skills */
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-dots {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #E5E7EB;
+}
+
+.dot.filled {
+    background: #FFB800;
+}
+
+/* Solution Statement */
+.solution-statement {
+    background: #F8F8FF;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 3rem 0;
+}
+
+.solution-statement h2 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Main Features */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #E5E7EB;
+}
+
+.feature-number {
+    width: 32px;
+    height: 32px;
+    background: #6366F1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #6366F1;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Wireframes Section */
+.wireframes {
+    margin-bottom: 4rem;
+}
+
+.wireframes h2 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.wireframe-content {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.wireframe-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.wireframe-description {
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .wireframe-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* User Flows Section */
+.user-flows {
+    margin-bottom: 4rem;
+}
+
+.user-flows h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.flow-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.flow-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.flow-number {
+    width: 24px;
+    height: 24px;
+    background: #6366F1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.flow-title h3 {
+    color: #6366F1;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.flow-title p {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.flow-diagram img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .flow-header {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* iPad Version Section */
+.ipad-version {
+    margin-bottom: 4rem;
+}
+
+.ipad-version h2 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ipad-version p {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
     max-width: 800px;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-    max-width: 600px;
+.ipad-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
-/* Projects Section */
+.ipad-tablet img,
+.mobile-usage img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* Reflection Section */
+.reflection {
+    margin-bottom: 4rem;
+}
+
+.reflection h2 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.reflection p {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.reflection-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.award-image img,
+.presentation-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* Add to existing media queries */
+@media (max-width: 768px) {
+    .project-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .points-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-container {
+        padding: 6rem 1rem 1rem;
+    }
+
+    .persona-card {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wireframe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flow-screens {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .ipad-images,
+    .reflection-images {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* More Projects Section */
+.more-projects {
+    margin: 6rem 0;
+    overflow: hidden;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-arrows {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-arrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E5E7EB;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.projects-container {
+    overflow: hidden;
+}
+
 .project-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem 2rem;  /* Reduced from 10rem to 6rem for vertical gap, kept 2rem for horizontal */
+    gap: 2rem;
 }
 
 .project-card {
-    position: relative;
-    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary-color);
+    display: none;
 }
 
 .project-card img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 0.5rem;
     margin-bottom: 1rem;
-    transition: all 0.3s ease;
-}
-
-/* Add hover effects */
-.project-card:hover img {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
 
 .project-card p {
     color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Contact Section */
 .contact {
-    background-color: #000;
+    background: var(--primary-color);
     color: white;
-    margin-top: 10rem;
-    padding: 6rem 0;  /* Increased padding */
+    padding: 4rem 0;
 }
 
 .contact-content {
@@ -180,35 +587,36 @@ nav {
     align-items: center;
 }
 
-.contact-content h2 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin: 0;
+.contact h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
 }
 
-.cta-button {
-    background-color: white;
-    color: black;
-    padding: 1rem 1.5rem;
+.contact h3 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.lets-talk-btn {
+    background: white;
+    color: var(--primary-color);
+    padding: 1rem 2rem;
     border-radius: 2rem;
     text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     transition: all 0.3s ease;
 }
 
-.cta-button:hover {
-    background-color: var(--dark-yellow);
+.lets-talk-btn:hover {
+    background: #FFB800;
     color: white;
 }
 
 /* Footer */
 footer {
-    background-color: #000;
+    background: var(--primary-color);
     color: white;
-    padding: 1.5rem 0;  /* Reduced padding */
+    padding: 1.5rem 0;
 }
 
 .footer-content {
@@ -220,425 +628,42 @@ footer {
     align-items: center;
 }
 
-.footer-content p {
-    font-weight: 300;  /* Thinner font weight */
-    color: rgba(255, 255, 255, 0.8);  /* Slightly reduced opacity */
-    font-size: 0.9rem;  /* Slightly smaller font size */
-}
-
 .footer-links {
     display: flex;
-    gap: 2rem;  /* Consistent spacing between links */
+    gap: 2rem;
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.8);  /* Slightly reduced opacity */
+    color: white;
     text-decoration: none;
-    font-weight: 300;  /* Thinner font weight */
-    font-size: 0.9rem;  /* Slightly smaller font size */
-    transition: color 0.3s ease;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: white;  /* Full opacity on hover */
+    opacity: 1;
 }
 
-/* Update the responsive design for footer */
+/* Update media queries */
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
-}
-
-/* Add these new styles for the About page */
-
-/* About Hero Section */
-.about-hero {
-    padding: 12rem 2rem 4rem;  /* Increased from 10rem to 12rem */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-hero h1 {
-    font-size: 4rem;
-    line-height: 1.2;
-    margin-bottom: 2rem;
-}
-
-.about-hero h1 em {
-    font-style: italic;
-}
-
-/* About Content Section */
-.about-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 4rem;
-}
-
-.about-text {
-    max-width: 800px;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-}
-
-/* Update the highlight class */
-.highlight {
-    color: var(--dark-yellow);  /* Changed from primary-color to dark-yellow */
-    font-weight: 500;
-}
-
-/* The tool class can remain orange as it is */
-.tool {
-    color: var(--dark-yellow);
-    font-weight: 500;
-}
-
-.download-resume {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 400;
-    font-size: 1.25rem;
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    border: 1px solid #E5E5E5;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-}
-
-.download-resume:hover {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.download-resume span {
-    font-size: 1.25rem;
-}
-
-/* Experience Section */
-.experience {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 4rem;
-}
-
-.experience h2 {
-    font-size: 1.25rem;
-    font-weight: 500;
-}
-
-.job-list {
-    max-width: 800px;
-}
-
-.job {
-    margin-bottom: 4rem;
-}
-
-.job:last-child {
-    margin-bottom: 0;
-}
-
-.job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.job h3 {
-    font-size: 2rem;
-    font-weight: 500;
-    color: var(--primary-color);
-}
-
-.job-date {
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-}
-
-.visit-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 400;
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid #E5E5E5;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-}
-
-.visit-link:hover {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.visit-link span {
-    font-size: 1rem;
-}
-
-.job ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.job li {
-    position: relative;
-    padding-left: 1rem;
-    margin-bottom: 1.5rem;
-    color: var(--secondary-color);
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
-.job li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--dark-yellow);
-    font-size: 1.2rem;
-    line-height: 1;
-}
-
-/* Responsive Design for Experience Section */
-@media (max-width: 768px) {
-    .experience {
+    .projects-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .job h3 {
-        font-size: 1.5rem;
-    }
-
-    .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-}
-
-/* First, add the keyframes for fade-in animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Add animation classes */
-.fade-in {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Add different delays for different sections */
-.hero h1 {
-    animation-delay: 0.2s;
-}
-
-.hero p {
-    animation-delay: 0.4s;
-}
-
-.project-card:nth-child(1) {
-    animation-delay: 0.4s;
-}
-
-.project-card:nth-child(2) {
-    animation-delay: 0.6s;
-}
-
-.project-card:nth-child(3) {
-    animation-delay: 0.8s;
-}
-
-.project-card:nth-child(4) {
-    animation-delay: 1s;
-}
-
-/* About page animations */
-.about-hero h1 {
-    animation-delay: 0.2s;
-}
-
-.about-grid h2 {
-    animation-delay: 0.3s;
-}
-
-.about-text p {
-    animation-delay: 0.4s;
-}
-
-.download-resume {
-    animation-delay: 0.6s;
-}
-
-.experience h2 {
-    animation-delay: 0.7s;
-}
-
-.job {
-    animation-delay: 0.8s;
-}
-
-/* Contact section animation */
-.contact-content {
-    animation-delay: 0.4s;
-}
-
-/* Update existing responsive styles and add new ones */
-
-/* Responsive styles for all screen sizes */
-@media (max-width: 1024px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .about-hero h1 {
-        font-size: 3rem;
-    }
-
-    .contact-content h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Header */
-    nav {
-        padding: 0 1rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
-    }
-
-    /* Hero sections */
-    .hero, .about-hero {
-        padding: 10rem 1rem 3rem;  /* Increased from 8rem to 10rem for mobile */
-        text-align: center;
-    }
-
-    .hero h1, .hero p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Project grid */
-    .project-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-        gap: 4rem;  /* Reduced from 5rem to 4rem for mobile */
-    }
-
-    /* About page */
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .about-text {
-        font-size: 1rem;
-        margin: 0 auto;
-    }
-
-    .about-text p {
-        text-align: center;
-    }
-
-    .download-resume {
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: center;
-    }
-
-    /* Experience section */
-    .experience {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .job-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .job h3, .job-date {
-        text-align: center;
-    }
-
-    .job ul {
-        text-align: left; /* Keep list items left-aligned for readability */
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .visit-link {
-        margin: 1rem auto;
-    }
-
-    /* Contact section */
-    .contact {
-        padding: 3rem 0;
     }
 
     .contact-content {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
-        padding: 0 1rem;
     }
 
-    .contact-content h2 {
-        font-size: 1.75rem;
+    .contact h3 {
+        font-size: 1.5rem;
     }
 
-    /* Footer */
     .footer-content {
         flex-direction: column;
-        gap: 1.5rem;
         text-align: center;
-        padding: 1rem;
+        gap: 1rem;
     }
 
     .footer-links {
@@ -648,779 +673,136 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    /* Even smaller screens */
-    .hero h1, .about-hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .project-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .job h3 {
-        font-size: 1.25rem;
-    }
-
-    .visit-link, .download-resume {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .nav-links {
-        gap: 0.75rem;
-    }
-
-    .nav-links a {
-        font-size: 0.8rem;
-    }
-}
-
-/* Add smooth scrolling for better mobile experience */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Improve touch targets on mobile */
-@media (hover: none) {
-    .nav-links a,
-    .project-card,
-    .cta-button,
-    .visit-link,
-    .download-resume {
-        padding: 0.8rem;
-    }
-}
-
-/* Keep desktop alignment left (default) for larger screens */
-@media (min-width: 769px) {
-    .hero, .about-hero, .about-grid, .experience, .job-header {
-        text-align: left;
-    }
-}
-
-.project-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 12rem 2rem 2rem; /* Increased from 10rem to 12rem for even more space */
-}
-
-.project-header {
-    margin-bottom: 3rem;
-    padding-top: 2rem; /* Add some spacing after the navigation */
-}
-
-.project-header h1 {
-    font-size: 4rem; /* Make the title larger */
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-
-.project-subtitle {
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-    margin-top: 0.5rem;
-}
-
-.project-hero {
-    margin-bottom: 2rem;
-}
-
-.project-hero img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px; /* Added border radius */
-}
-
-.project-metadata {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-    padding: 2rem 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
-
-.metadata-item h3 {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-.content-block {
-    margin-bottom: 4rem;
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.image-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px; /* Added border radius */
-    transition: transform 0.3s ease;
-}
-
-.full-width-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px; /* Added border radius */
-    margin-top: 2rem;
-}
-
-.more-projects {
-    margin-top: 8rem;
+/* Main Features Section */
+.main-features {
     margin-bottom: 6rem;
 }
 
-.more-projects-header {
+/* Update all h2 styles */
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Update specific h2 styles */
+.background h2,
+.problem-statement h2,
+.persona h2,
+.solution-statement h2,
+.main-features h2,
+.wireframes h2,
+.user-flows h2,
+.ipad-version h2,
+.reflection h2,
+.section-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Remove any other specific h2 font-size declarations */
+
+/* Features and Flows Section */
+.features-and-flows {
+    margin-bottom: 6rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #E5E7EB;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feature-card.active {
+    background: #6366F1;
+    color: white;
+    border-color: #6366F1;
+}
+
+.feature-card.active h3,
+.feature-card.active p {
+    color: white;
+}
+
+.feature-number {
+    width: 32px;
+    height: 32px;
+    background: #6366F1;
+    color: white;
+    border-radius: 50%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.feature-card.active .feature-number {
+    background: white;
+    color: #6366F1;
+}
+
+.feature-card h3 {
+    color: #6366F1;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.flow-content {
+    margin-top: 3rem;
+}
+
+.flow-diagram {
     margin-bottom: 2rem;
 }
 
-.more-projects-header h2 {
-    font-size: 2rem;
-    font-weight: 500;
+.flow-diagram img {
+    width: 100%;
+    border-radius: 0.5rem;
 }
 
-.project-nav {
+.flow-screens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.screen-step {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
-.nav-arrow {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid #E5E5E5;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-}
-
-.nav-arrow:hover {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    transition: opacity 0.3s ease;
-}
-
-.project-card {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
+.screen-step img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    border-radius: 0.5rem;
 }
 
-.project-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.project-card p {
+.screen-step p {
     color: var(--secondary-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
-    .projects-grid {
+    .features-grid {
         grid-template-columns: 1fr;
     }
-    
-    .more-projects-header h2 {
-        font-size: 1.5rem;
-    }
-}
 
-/* Add these styles to handle the project card links */
-.project-card a {
-    text-decoration: none;
-    color: var(--primary-color);
-    display: block;
-}
-
-.project-card a:hover {
-    color: var(--primary-color);  /* Maintain text color on hover */
-}
-
-/* Update the existing project-card hover effect to work with links */
-.project-card:hover img,
-.project-card a:hover img {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Add these new styles for the project details page */
-.project-overview {
-    margin-bottom: 4rem; /* Increased from 2rem to 4rem */
-}
-
-.project-overview h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.project-overview p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-    max-width: 800px;
-}
-
-.challenge-solution-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.challenge-block, .solution-block {
-    background-color: #f8f8f8;
-    padding: 2rem;
-    border-radius: 12px;
-}
-
-.challenge-block h2, .solution-block h2 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.challenge-block p, .solution-block p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-}
-
-.design-approach {
-    margin-bottom: 2rem;
-}
-
-.design-approach h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.design-approach p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-    max-width: 800px;
-}
-
-@media (max-width: 768px) {
-    .challenge-solution-grid {
+    .flow-screens {
         grid-template-columns: 1fr;
-    }
-}
-
-/* Add these styles for the back button */
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: white;
-    border: 1px solid #E5E5E5;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-}
-
-.back-button:hover {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-/* Update project container padding to accommodate the back button */
-.project-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 6rem 2rem 2rem; /* Adjusted top padding */
-}
-
-@media (max-width: 768px) {
-    .back-button {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-        margin-bottom: 2rem; /* Increased from 3rem to 4rem for mobile */
-    }
-}
-
-/* Add specific spacing for the back button section */
-.back-button-section {
-    padding-top: 10rem; /* Large space between nav and back button */
-    padding-bottom: 2rem; /* Space between back button and content */
-}
-
-/* Update back button styles */
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: white;
-    border: 1px solid #E5E5E5;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-}
-
-/* Update project container to remove conflicting padding */
-.project-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem 2rem; /* Removed top padding since it's handled by back-button-section */
-}
-
-@media (max-width: 768px) {
-    .back-button-section {
-        padding-top: 12rem; /* Adjusted for mobile */
-        padding-bottom: 4rem;
-    }
-}
-
-/* Update the projects grid styles */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    transition: opacity 0.3s ease;
-}
-
-/* Update nav arrow styles to work with buttons */
-.nav-arrow {
-    background: none;
-    border: 1px solid #E5E5E5;
-    border-radius: 100px;
-    padding: 0.5rem 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
-}
-
-.nav-arrow:hover {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-/* Optional: Add hover effect for better visual feedback */
-.image-grid img, .full-width-image {
-    transition: transform 0.3s ease;
-}
-
-.image-grid img:hover, .full-width-image:hover {
-    transform: scale(1.01); /* Subtle scale effect on hover */
-}
-
-/* Add or update the fade-in animation styles */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Add different delays for different sections */
-.back-button-section .fade-in {
-    animation-delay: 0.2s;
-}
-
-.project-header .fade-in {
-    animation-delay: 0.4s;
-}
-
-.project-hero .fade-in {
-    animation-delay: 0.6s;
-}
-
-.project-metadata .fade-in {
-    animation-delay: 0.8s;
-}
-
-.project-overview .fade-in {
-    animation-delay: 1s;
-}
-
-.project-details .fade-in {
-    animation-delay: 1.2s;
-}
-
-.design-approach .fade-in {
-    animation-delay: 1.4s;
-}
-
-.content-block .fade-in {
-    animation-delay: 1.6s;
-}
-
-.more-projects .fade-in {
-    animation-delay: 1.8s;
-}
-
-/* Update existing responsive styles and add new ones */
-
-@media (max-width: 768px) {
-    /* Project header */
-    .project-header h1 {
-        font-size: 2.5rem; /* Smaller font size for mobile */
-    }
-
-    .project-subtitle {
-        font-size: 1rem;
-    }
-
-    /* Project metadata */
-    .project-metadata {
-        grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
-        gap: 1.5rem;
-        padding: 1.5rem 0;
-    }
-
-    /* Project overview */
-    .project-overview p {
-        font-size: 1rem;
-    }
-
-    /* Challenge and Solution blocks */
-    .challenge-solution-grid {
-        grid-template-columns: 1fr; /* Stack blocks on mobile */
-        gap: 1.5rem;
-    }
-
-    .challenge-block, .solution-block {
-        padding: 1.5rem;
-    }
-
-    /* Design approach */
-    .design-approach h2 {
-        font-size: 1.25rem;
-    }
-
-    .design-approach p {
-        font-size: 1rem;
-    }
-
-    /* Content blocks */
-    .content-block {
-        margin-bottom: 3rem;
-    }
-
-    .content-block h2 {
-        font-size: 1.25rem;
-    }
-
-    .image-grid {
-        grid-template-columns: 1fr; /* Single column for images */
-        gap: 1.5rem;
-    }
-
-    /* More projects section */
-    .more-projects {
-        margin-top: 4rem;
-        margin-bottom: 4rem;
-    }
-
-    .more-projects-header {
-        flex-direction: row; /* Keep header elements in a row */
-        align-items: center;
-        margin-bottom: 1.5rem;
-    }
-
-    .more-projects-header h2 {
-        font-size: 1.25rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr; /* Single column for project cards */
-    }
-
-    /* Container padding */
-    .project-container {
-        padding: 0 1rem 1rem;
-    }
-
-    /* Back button section */
-    .back-button-section {
-        padding-top: 8rem; /* Adjusted for mobile */
-        padding-bottom: 2rem;
-    }
-
-    /* Navigation arrows */
-    .nav-arrow {
-        padding: 0.4rem 0.8rem;
-        font-size: 1.2rem;
-    }
-
-    /* Project cards */
-    .project-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .project-card p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Add styles for even smaller screens */
-@media (max-width: 480px) {
-    .project-header h1 {
-        font-size: 2rem;
-    }
-
-    .project-metadata {
-        grid-template-columns: 1fr; /* Single column for metadata on very small screens */
-    }
-
-    .back-button {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .more-projects-header {
-        gap: 1rem;
-    }
-
-    .nav-arrow {
-        padding: 0.3rem 0.6rem;
-        font-size: 1rem;
-    }
-}
-
-/* Add touch-friendly interactions for mobile */
-@media (hover: none) {
-    .back-button,
-    .nav-arrow,
-    .project-card {
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .project-card:active {
-        transform: scale(0.98);
-    }
-
-    .nav-arrow:active,
-    .back-button:active {
-        background-color: var(--primary-color);
-        color: white;
-    }
-}
-
-/* Ensure images don't overflow their containers */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Improve text readability on mobile */
-p {
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-}
-
-/* Add hamburger menu styles */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    background: none;
-    border: none;
-}
-
-.hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: var(--primary-color);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-/* Update media queries for mobile navigation */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-        z-index: 1001;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background-color: var(--background-color);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2.5rem;
-        transition: right 0.3s ease;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        font-size: 1.5rem;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .nav-links.active a {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .nav-links a:nth-child(1) { transition-delay: 0.1s; }
-    .nav-links a:nth-child(2) { transition-delay: 0.2s; }
-    .nav-links a:nth-child(3) { transition-delay: 0.3s; }
-    .nav-links a:nth-child(4) { transition-delay: 0.4s; }
-}
-
-/* Update spacing for the highlight text */
-.highlight {
-    color: var(--dark-yellow);
-    font-weight: 500;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .project-overview {
-        margin-bottom: 2rem; /* Slightly less spacing on mobile */
-    }
-    
-    .project-overview h2 {
-        font-size: 1.5rem;
-    }
-}
-
-/* Update mobile styles for logo */
-@media (max-width: 768px) {
-    .logo-text {
-        display: none; /* Hide text on mobile if needed */
-    }
-}
-
-/* Awards Section Styles */
-.awards {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 2rem;
-}
-
-.awards h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.awards-list {
-    display: grid;
-    grid-template-columns: 200px 1fr; /* Left column for title, right column for awards */
-    gap: 4rem;
-}
-
-.awards h2 {
-    position: sticky;
-    top: 120px; /* Adjust based on your header height */
-    align-self: start;
-}
-
-.award-items {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.award-item {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 2rem;
-}
-
-.award-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.award-header h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.award-category {
-    color: var(--secondary-color);
-    font-size: 1rem;
-}
-
-/* Responsive styles for awards section */
-@media (max-width: 768px) {
-    .awards-list {
-        grid-template-columns: 1fr; /* Stack on mobile */
-        gap: 2rem;
-    }
-
-    .awards h2 {
-        position: static;
-        margin-bottom: 2rem;
-        font-size: 1.5rem;
-    }
-
-    .award-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .award-header h3 {
-        font-size: 1.25rem;
     }
 }
 
