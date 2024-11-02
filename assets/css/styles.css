@@ -82,7 +82,7 @@ main > p {
     font-size: 20px;
     color: var(--secondary-color);
     margin-bottom: 4rem;
-    max-width: 600px;
+
     line-height: 1.5;
 }
 
