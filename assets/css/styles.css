@@ -1,3 +1,22 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.preload {
+    opacity: 0;
+}
+
 :root {
     --primary-color: #000000;
     --secondary-color: #666666;
@@ -236,7 +255,7 @@ footer div > div a {
     }
 
     main {
-        padding: 6rem 1rem 2rem;
+        padding: 12rem 1rem 2rem;
     }
 
     main > h1 {
@@ -799,7 +818,7 @@ main h2 {
 
     .project-container,
     .project-content {
-        padding: 6rem 1rem 2rem;
+        padding: 12rem 1rem 2rem;
     }
 }
 
@@ -1630,4 +1649,205 @@ main h2 {
 main h2:first-of-type {
     margin-top: 0;
 }
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-color: var(--background-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 1rem 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 2rem;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Hide menu toggle by default */
+.menu-toggle {
+    display: none;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0;
+        background-color: white;
+    }
+
+    nav {
+        padding: 0 1rem;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 1rem;
+        z-index: 1001;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .menu-toggle .material-icons {
+        font-size: 32px;
+        color: var(--primary-color);
+    }
+
+    /* Update animation for Material Icon */
+    .menu-toggle.active .material-icons {
+        content: "close";
+    }
+
+    /* Rest of your mobile navigation styles... */
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Hide mobile elements by default */
+.menu-toggle,
+.mobile-nav {
+    display: none;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    /* Hide desktop navigation */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Show mobile menu toggle */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 1rem;
+        z-index: 1001;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .menu-toggle .material-icons {
+        font-size: 32px;
+        color: var(--primary-color);
+    }
+
+    /* Mobile Navigation Styles */
+    .mobile-nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-color: var(--background-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 1rem 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .mobile-nav.active {
+        transform: translateX(0);
+    }
+
+    .mobile-nav a {
+        font-size: 2rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--primary-color);
+        padding: 0.5rem 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-nav a:last-child {
+        border-bottom: none;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Add these animation definitions at the top of your CSS file */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+}
+
+.animate-on-scroll.visible {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Add different delays for different elements */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
 
