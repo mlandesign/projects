@@ -6,6 +6,124 @@
     <title>My Story Book - Project Details</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <style>
+        /* Add these responsive styles in the head section */
+        @media screen and (max-width: 768px) {
+            .project-container {
+                padding: 12rem 1rem 2rem;;
+            }
+
+            .metadata {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .metadata-item {
+                width: 100%;
+            }
+
+            .intro-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .app-logo {
+                margin-bottom: 20px;
+            }
+
+            .pain-points-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .wireframe-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .prototype-container iframe {
+                width: 100%;
+                height: 300px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-item img {
+                width: 100%;
+                height: auto;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Mobile navigation styles */
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: block;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: white;
+                padding: 80px 20px 20px;
+                transition: right 0.3s ease;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .mobile-nav.active {
+                right: 0;
+            }
+
+            .mobile-nav a {
+                display: block;
+                padding: 15px 0;
+                font-size: 18px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: relative;
+                z-index: 100;
+            }
+
+            /* Contact section responsive */
+            .contact {
+                padding: 40px 20px;
+            }
+
+            .contact h1 {
+                font-size: 24px;
+            }
+
+            /* Footer responsive */
+            footer {
+                padding: 20px;
+                text-align: center;
+            }
+
+            footer nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body class="preload">
     <header>
@@ -62,247 +180,217 @@
             <img src="assets/img/mystorybook/header.png" alt="My Story Book app interface with child playing">
         </div>
 
-        <div class="project-intro">
-            <div class="intro-grid">
+        <div class="project-content">
+            <div class="intro-section">
                 <div class="app-logo">
                     <img src="assets/img/mystorybook/logo.png" alt="My Story Book logo">
                 </div>
-                <div class="intro-content">
+                <div class="intro-text">
                     <h2>My Story Book: Adventures and Dreams</h2>
                     <p>An end-to-end mobile app designed to help autistic children express themselves, connect with others, and improve communication skills. Tackling the challenges faced by ASD children in expressing emotions and interpreting social cues, this app provides creative and interactive tools to foster connections.</p>
                 </div>
             </div>
-        </div>
 
-        <div class="pain-points">
-            <h2>Pain Points</h2>
-            <div class="pain-points-grid">
-                <div class="pain-point-card">
-                    <div class="number">1</div>
-                    <p>How can we provide autistic children with easy ways to express themselves?</p>
-                </div>
-                <div class="pain-point-card">
-                    <div class="number">2</div>
-                    <p>How can autistic children understand other people during communication?</p>
-                </div>
-                <div class="pain-point-card">
-                    <div class="number">3</div>
-                    <p>How do we provide chances for autistic children to make friends?</p>
-                </div>
-            </div>
-        </div>
+            <section class="background">
+                <h2>Background</h2>
+                <p>According to the 2019 CHSCY, 1 in 50 (or 2.0%) Canadian children and youth aged 1 to 17 years were diagnosed with Autism Spectrum Disorder (ASD). Children with ASD usually have difficulties in social interaction and communication. Their ability to communicate with others can vary substantially from person to person. However, many children with ASD desire friendship and seek opportunities for social interaction.</p>
+            </section>
 
-        <div class="problem-statement">
-            <h2>Problem Statement</h2>
-            <p>Children with Autism Spectrum Disorder (ASD) struggle with expressing their emotions and understanding social cues, such as body language and facial expressions. These difficulties hinder their ability to communicate effectively, form connections, and feel a sense of belonging within their social circles.</p>
-        </div>
-
-        <div class="persona">
-            <h2>Persona</h2>
-            <img src="assets/img/mystorybook/persona.png" alt="Persona details showing David Wilshire, an 8-year-old student with autism">
-        </div>
-
-        <div class="solution-content">
-            <h2>Solution Statement</h2>
-            <p>My Story Book offers a creative, interactive platform that empowers ASD children to express themselves through storytelling, engage in meaningful social interactions, and practice communication skills using Augmented Reality (AR) technology. The app fosters a supportive environment where children can explore self-expression and connect with peers in a way that feels natural and engaging.</p>
-        </div>
-
-        <div class="wireframe">
-            <h2>Wireframe</h2>
-            <div class="wireframe-grid">
-                <div class="wireframe-images">
-                    <img src="assets/img/mystorybook/wireframe.png" alt="App wireframes showing user flow">
-                </div>
-                <div class="wireframe-description">
-                    <p>Children with ASD often face communication challenges but have a strong desire to express themselves and engage socially. Peer interactions are crucial for developing their communication skills. Visual arts, like drawing, can support self-expression, while AR technology provides engaging, interactive environments to enhance social skills.</p>
+            <div class="pain-points">
+                <h2>Pain Points</h2>
+                <div class="pain-points-grid">
+                    <div class="pain-point-card">
+                        <div class="number">1</div>
+                        <p>How can we provide autistic children with easy ways to express themselves?</p>
+                    </div>
+                    <div class="pain-point-card">
+                        <div class="number">2</div>
+                        <p>How can autistic children understand other people during communication?</p>
+                    </div>
+                    <div class="pain-point-card">
+                        <div class="number">3</div>
+                        <p>How do we provide chances for autistic children to make friends?</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="user-flow">
-            <h2>Three main features & User Flow</h2>
+            <div class="problem-statement">
+                <h2>Problem Statement</h2>
+                <p>Children with Autism Spectrum Disorder (ASD) struggle with expressing their emotions and understanding social cues, such as body language and facial expressions. These difficulties hinder their ability to communicate effectively, form connections, and feel a sense of belonging within their social circles.</p>
+            </div>
+
+            <div class="persona">
+                <h2>Persona</h2>
+                <img src="assets/img/mystorybook/persona.png" alt="Persona details showing David Wilshire, an 8-year-old student with autism">
+            </div>
+
+            <div class="solution-content">
+                <h2>Solution Statement</h2>
+                <p>My Story Book offers a creative, interactive platform that empowers ASD children to express themselves through storytelling, engage in meaningful social interactions, and practice communication skills using Augmented Reality (AR) technology. The app fosters a supportive environment where children can explore self-expression and connect with peers in a way that feels natural and engaging.</p>
+            </div>
+
+            <div class="wireframe">
+                <h2>Wireframe</h2>
+                <div class="wireframe-grid">
+                    <div class="wireframe-images">
+                        <img src="assets/img/mystorybook/wireframe.png" alt="App wireframes showing user flow">
+                    </div>
+                    <div class="wireframe-description">
+                        <p>Children with ASD often face communication challenges but have a strong desire to express themselves and engage socially. Peer interactions are crucial for developing their communication skills. Visual arts, like drawing, can support self-expression, while AR technology provides engaging, interactive environments to enhance social skills.</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="key-features">
+                <h2>Key Features</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card blue" data-feature="MY TRIP">
+                        <div class="feature-number">1</div>
+                        <h3>CREATE STORIES</h3>
+                        <p>Users customize avatars, create stories in text or video, and share them.</p>
+                    </div>
+    
+                    <div class="feature-card white" data-feature="OPEN JOB">
+                        <div class="feature-number">2</div>
+                        <h3>REAL INTERACTIONS</h3>
+                        <p>A virtual village where users can explore others' stories and build connections.</p>
+                    </div>
+    
+                    <div class="feature-card white" data-feature="LARGE PARCEL">
+                        <div class="feature-number">3</div>
+                        <h3>SIMULATIVE INTERACTIONS</h3>
+                        <p>AI-guided AR avatars offer social cue training.</p>
+                    </div>
+                </div>
+    
+                <div class="feature-showcase">
+                    <div class="prototype-container">
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/4lqsmDB9B5HfU7HSLwH1PH/My-story-book---draft?page-id=1%3A589&node-id=1-835&node-type=frame&viewport=1496%2C642%2C0.17&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A835&show-proto-sidebar=1&embed-host=share" allowfullscreen>
+                            
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
             
-            <!-- Features Cards as Tabs -->
-            <div class="features-cards">
-                <div class="feature-card purple active" data-flow="flow1">
-                    <div class="feature-number">1</div>
-                    <h3>CREATE STORIES</h3>
-                    <p>Users customize avatars, create stories in text or video, and share them.</p>
-                </div>
-                <div class="feature-card" data-flow="flow2">
-                    <div class="feature-number">2</div>
-                    <h3>REAL INTERACTIONS</h3>
-                    <p>A virtual village where users can explore others' stories and build connections.</p>
-                </div>
-                <div class="feature-card" data-flow="flow3">
-                    <div class="feature-number">3</div>
-                    <h3>SIMULATIVE INTERACTIONS</h3>
-                    <p>AI-guided AR avatars offer social cue training.</p>
+
+            <div class="section">
+                <h2>iPad Version</h2>
+                <p>In addition to the mobile app, My Story Book is also available in an optimized iPad version. The larger screen provides an enhanced, immersive experience, making it easier for children to create and explore stories. This version is designed to offer a more engaging and accessible platform for visual storytelling and interactive AR features.</p>
+                <br>
+                <div class="image-grid">
+                    <div class="image-item">
+                        <img src="assets/img/mystorybook/ipad.png" alt="My Story Book iPad version showing interface">
+                    </div>
+                    <div class="image-item">
+                        <img src="assets/img/mystorybook/mockup.png" alt="My Story Book mobile version in use">
+                    </div>
                 </div>
             </div>
 
-            <!-- Flow Content -->
-            <div class="flow-content">
-                <!-- Flow 1 -->
-                <div class="flow-section active" id="flow1">
-                    <img src="assets/img/mystorybook/flow-1.png" alt="Create Stories User Flow" class="flow-image">
-                    <div class="flow-steps">
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-1/step-1.png" alt="Homepage view">
-                            <p>Step 1: User clicks on April on the Homepage</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-1/step-2.png" alt="Add new story">
-                            <p>Step 2: User choose to add a new story today.</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-1/step-3.png" alt="Avatar selection">
-                            <p>Step 3: User choose avatar as the story teller of today</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-1/step-4.png" alt="Scene selection">
-                            <p>Step 4: User choose the scene (AR background or pictures)</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-1/step-5.png" alt="Story generation">
-                            <p>Step 5: User generate today's story by writing or recording.</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-1/step-6.png" alt="Voice recording">
-                            <p>Step 6: User choose to use voice record.</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-1/step-7.png" alt="Story editing">
-                            <p>Step 7: User edit the story today.</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-1/step-8.png" alt="Story posting">
-                            <p>Step 8: User post today's story.</p>
-                        </div>
+            <div class="section"></div>
+                <h2>Reflection</h2>
+                <p>Designing <span class="highlight">My Story Book</span> was a meaningful experience that combined empathy and technology to support autistic children. We learned the value of creating tailored solutions that make communication more accessible and engaging through storytelling and AR. This project emphasized the transformative potential of thoughtful design. We are honored that My Story Book won <span class="highlight">Third Place</span> in the CreateSC 2023 Design Marathon, reflecting the impact of our efforts.</p>
+                <br>
+                <div class="image-grid">
+                    <div class="image-item">
+                        <img src="assets/img/mystorybook/award-1.png" alt="My Story Book award presentation">
+                    </div>
+                    <div class="image-item">
+                        <img src="assets/img/mystorybook/award-2.png" alt="My Story Book project presentation">
                     </div>
                 </div>
+            </div>
 
-                <!-- Flow 2 -->
-                <div class="flow-section" id="flow2">
-                    <img src="assets/img/mystorybook/flow-2.png" alt="Real Interactions User Flow" class="flow-image">
-                    <div class="flow-steps">
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-2/step-1.png" alt="Homepage view">
-                            <p>Step 1: User clicks on April on the Homepage</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-2/step-2.png" alt="Add new story">
-                            <p>Step 2: User choose to add a new story today.</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-2/step-3.png" alt="Avatar selection">
-                            <p>Step 3: User choose avatar as the story teller of today</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-2/step-4.png" alt="Scene selection">
-                            <p>Step 4: User choose the scene (AR background or pictures)</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-2/step-5.png" alt="Story generation">
-                            <p>Step 5: User generate today's story by writing or recording.</p>
-                        </div>
+
+            <div class="more-projects">
+                <div class="more-projects-header">
+                    <h2>More Project</h2>
+                    <!-- <div class="project-nav">
+                        <button class="nav-arrow">←</button>
+                        <button class="nav-arrow">→</button>
+                    </div> -->
+                </div>
+                <div class="projects-grid">
+                    <a href="yms.html" class="project-card">
+                        <img src="assets/img/cover-yms.png" alt="Yard Management System">
+                        <h3>Yard Management System</h3>
+                        <p>Web Design, SaaS</p>
+                    </a>
+                    <a href="vendorportal.html" class="project-card">
+                        <img src="assets/img/cover-vendorportal.png" alt="Vendor Portal">
+                        <h3>Vendor Portal - Invoice Generation</h3>
+                        <p>Responsive Web Design</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <section class="contact">
+            <h1>Let's start creating together</h1>
+            <a href="#" class="lets-talk-btn">Let's Talk <span>→</span></a>
+        </section>
+
+        <footer>
+            <div>
+                <p>Designed by Meng Lan 2024</p>
+                <nav>
+                    <a href="index.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="https://www.linkedin.com/in/mlan14/" target="_blank">LinkedIn</a>
+                    <a href="https://dribbble.com/mlan14" target="_blank">Dribbble</a>
+                </nav>
+            </div>
+        </footer>
+
+        <!-- Add this before closing body tag -->
+        <script src="assets/js/main.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const featureCards = document.querySelectorAll('.feature-card');
+                const flowSections = document.querySelectorAll('.flow-section');
+                const menuToggle = document.querySelector('.menu-toggle');
+                const mobileNav = document.querySelector('.mobile-nav');
+                const body = document.body;
+
+                featureCards.forEach(card => {
+                    card.addEventListener('click', function() {
+                        // Remove active class from all cards
+                        featureCards.forEach(c => c.classList.remove('active'));
                         
-                    </div>>
-                </div>
+                        // Add active class to clicked card
+                        this.classList.add('active');
+                        
+                        const selectedFlow = this.getAttribute('data-flow');
 
-                <!-- Flow 3 -->
-                <div class="flow-section" id="flow3">
-                    <img src="assets/img/mystorybook/flow-3.png" alt="Simulative Interactions User Flow" class="flow-image">
-                    <div class="flow-steps">
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-3/step-1.png" alt="Homepage view">
-                            <p>Step 1: User clicks on April on the Homepage</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-3/step-2.png" alt="Add new story">
-                            <p>Step 2: User choose to add a new story today.</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-3/step-3.png" alt="Avatar selection">
-                            <p>Step 3: User choose avatar as the story teller of today</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-3/step-4.png" alt="Scene selection">
-                            <p>Step 4: User choose the scene (AR background or pictures)</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-3/step-5.png" alt="Story generation">
-                            <p>Step 5: User generate today's story by writing or recording.</p>
-                        </div>
-                        <div class="step">
-                            <img src="assets/img/mystorybook/flow-3/step-6.png" alt="Story generation">
-                            <p>Step 5: User generate today's story by writing or recording.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        // Hide all flow sections
+                        flowSections.forEach(section => {
+                            section.classList.remove('active');
+                        });
 
-        <div class="ipad-version">
-            <h2>iPad Version</h2>
-            <p>In addition to the mobile app, My Story Book is also available in an optimized iPad version. The larger screen provides an enhanced, immersive experience, making it easier for children to create and explore stories. This version is designed to offer a more engaging and accessible platform for visual storytelling and interactive AR features.</p>
-            <div class="device-images">
-                <img src="assets/img/mystorybook/ipad.png" alt="My Story Book iPad version showing interface">
-                <img src="assets/img/mystorybook/mockup.png" alt="My Story Book mobile version in use">
-            </div>
-        </div>
+                        // Show the selected flow section
+                        document.getElementById(selectedFlow).classList.add('active');
+                    });
+                });
 
-        <div class="reflection">
-            <h2>Reflection</h2>
-            <p>Designing <span class="highlight">My Story Book</span> was a meaningful experience that combined empathy and technology to support autistic children. We learned the value of creating tailored solutions that make communication more accessible and engaging through storytelling and AR. This project emphasized the transformative potential of thoughtful design. We are honored that My Story Book won <span class="highlight">Third Place</span> in the CreateSC 2023 Design Marathon, reflecting the impact of our efforts.</p>
-            <div class="award-images">
-                <img src="assets/img/mystorybook/award-1.png" alt="My Story Book award presentation">
-                <img src="assets/img/mystorybook/award-2.png" alt="My Story Book project presentation">
-            </div>
-        </div>
+                // Set first card as active by default
+                featureCards[0].classList.add('active');
 
-        <div class="more-projects">
-            <div class="more-projects-header">
-                <h2>More Project</h2>
-                <!-- <div class="project-nav">
-                    <button class="nav-arrow">←</button>
-                    <button class="nav-arrow">→</button>
-                </div> -->
-            </div>
-            <div class="projects-grid">
-                <a href="yms.html" class="project-card">
-                    <img src="assets/img/cover-yms.png" alt="Yard Management System">
-                    <h3>Yard Management System</h3>
-                    <p>Web Design, SaaS</p>
-                </a>
-                <a href="vendorportal.html" class="project-card">
-                    <img src="assets/img/cover-vendorportal.png" alt="Vendor Portal">
-                    <h3>Vendor Portal - Invoice Generation</h3>
-                    <p>Responsive Web Design</p>
-                </a>
-            </div>
-        </div>
-    </main>
+                menuToggle.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                    body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+                });
 
-    <section class="contact">
-        <h1>Let's start creating together</h1>
-        <a href="#" class="lets-talk-btn">Let's Talk <span>→</span></a>
-    </section>
-
-    <footer>
-        <div>
-            <p>Designed by Meng Lan 2024</p>
-            <nav>
-                <a href="index.html">Projects</a>
-                <a href="about.html">About</a>
-                <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank">Resume</a>
-                <a href="https://www.linkedin.com/in/mlan14/" target="_blank">LinkedIn</a>
-                <a href="https://dribbble.com/mlan14" target="_blank">Dribbble</a>
-            </nav>
-        </div>
-    </footer>
-
-    <!-- Add this before closing body tag -->
-    <script src="assets/js/main.js"></script>
-</body>
+                // Close mobile nav when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileNav.contains(e.target) && !menuToggle.contains(e.target)) {
+                        mobileNav.classList.remove('active');
+                        body.style.overflow = '';
+                    }
+                });
+            });
+        </script>
+    </body>
 </html> 
