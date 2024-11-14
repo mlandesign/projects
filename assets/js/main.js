@@ -69,6 +69,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize feature cards interaction
     initFeatureCards();
+
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons and panels
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+
+            // Add active class to the clicked button and corresponding panel
+            this.classList.add('active');
+            const panelId = this.getAttribute('aria-controls');
+            document.getElementById(panelId).classList.add('active');
+        });
+    });
 });
 
 function initCarousel(carouselId, challengeFolder) {
@@ -196,3 +213,5 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style); 
+
+
