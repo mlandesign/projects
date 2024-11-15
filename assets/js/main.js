@@ -214,4 +214,24 @@ style.textContent = `
 `;
 document.head.appendChild(style); 
 
+function openVideoPopup(event) {
+    event.preventDefault();
+    document.getElementById('videoPopup').style.display = 'block';
+    document.getElementById('videoPlayer').play();
+}
+
+// Close popup when clicking the close button
+document.querySelector('.close-popup').addEventListener('click', function() {
+    document.getElementById('videoPopup').style.display = 'none';
+    document.getElementById('videoPlayer').pause();
+});
+
+// Close popup when clicking outside the video
+document.getElementById('videoPopup').addEventListener('click', function(event) {
+    if (event.target === this) {
+        this.style.display = 'none';
+        document.getElementById('videoPlayer').pause();
+    }
+});
+
 

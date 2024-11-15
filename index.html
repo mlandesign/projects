@@ -5,10 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meng - UI/UX Designer</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Add this line -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/grid.css">
+    
+    <!-- Add video popup styles -->
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
 
+        .popup-content {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 5% auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .popup-content video {
+            width: 100%;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .close-popup {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            z-index: 1001;
+        }
+
+        .close-popup:hover {
+            color: #000;
+        }
+    </style>
 </head>
 <body class="preload">
     <header>
@@ -51,33 +93,49 @@
             <a href="#" class="project-card">
                 <img src="assets/img/cover-waytodrive.png" alt="Way to drive">
                 <h3>Way to drive - Coming Soon</h3>
-                <p>App, Interaction Design</p>
+                <p>App Design, AR</p>
             </a>
             <a href="serviceapp.html" class="project-card">
                 <img src="assets/img/cover-serviceapp.png" alt="Service App">
                 <h3>Service App</h3>
-                <p>App Design</p>
+                <p>App Design, B2B</p>
             </a>
             <!-- <a href="#" class="project-card">
                 <img src="assets/img/cover-vendorportal.png" alt="Vendor Portal">
                 <h3>Vendor Portal - Invoice Generation - Coming Soon</h3>
                 <p>Responsive Web Design</p>
             </a> -->
-            <a href="#" class="project-card">
+            <!-- <a href="#" class="project-card">
                 <img src="assets/img/cover-cubeworkapp.png" alt="Cubework App">
                 <h3>Cubework App - Coming Soon</h3>
                 <p>App Design, Front-End Development</p>
-            </a>
+            </a> -->
             <a href="mystorybook.html" class="project-card">
                 <img src="assets/img/cover-mystorybook.png" alt="My Story Book">
                 <h3>My Story Book</h3>
-                <p>App Design</p>
+                <p>App Design, game design</p>
             </a>
             <a href="pickymon.html" class="project-card">
                 <img src="assets/img/cover-pickymon.png" alt="Pickymon">
                 <h3>Pickymon</h3>
                 <p>Graphic Design, Illustration</p>
             </a>
+            <a href="#" class="project-card" onclick="openVideoPopup(event)">
+                <img src="assets/img/cover-expedia.png" alt="Expedia Promo">
+                <h3>Expedia Promo Video</h3>
+                <p>Animation, Illustration</p>
+            </a>
+        </div>
+
+        <!-- Update the popup container -->
+        <div id="videoPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-popup">&times;</span>
+                <video id="videoPlayer" controls>
+                    <source src="assets/img/expedia.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </main>
 
