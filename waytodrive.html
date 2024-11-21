@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Way to Drive - Project</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
+</head>
+<style>
+    
+
+    /* Project Header */
+    .project-header {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .project-title {
+        font-size: 64px;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .project-subtitle {
+        font-size: 24px;
+        color: #000;
+        margin-bottom: 3rem;
+    }
+
+    /* Project Info Grid */
+    .project-info {
+        margin-bottom: 3rem;
+    }
+
+    .project-info h3 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-info p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    /* Overview Section */
+.project-overview {
+    background: #F8F8FF;  /* Light purple background */
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.project-overview h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.project-overview p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Project Background Section */
+.project-background {
+    margin-bottom: 4rem;
+}
+
+.project-background h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.project-background > p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.background-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.background-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.background-card:hover {
+    transform: translateY(-4px);
+}
+
+.background-card .number {
+    width: 28px;
+    height: 28px;
+    background: #4169E1;  /* Royal blue for the number circles */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+.background-card h3 {
+    color: #4169E1;  /* Royal blue for headings */
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.background-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .background-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-overview,
+    .project-background {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Research Section */
+.research {
+    margin-bottom: 4rem;
+}
+
+.research h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.research p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.research-stats {
+    background: #F8F8FF;  /* Light purple background */
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.research-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .research {
+        margin-bottom: 3rem;
+    }
+    
+    .research-stats {
+        padding: 1rem;
+    }
+}
+
+.persona {
+    margin-bottom: 4rem;
+}
+
+.persona-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.persona-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.persona-info {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 12px;
+}
+
+.persona-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.persona-details {
+    margin-bottom: 1rem;
+}
+
+.persona-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.persona-points {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.pain-points,
+.needs {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 12px;
+}
+
+.pain-points h4,
+.needs h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.pain-points ul,
+.needs ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pain-points li,
+.needs li {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.design-goal {
+    margin-bottom: 4rem;
+}
+
+.goal-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.goal-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-4px);
+}
+
+.goal-card .number {
+    width: 28px;
+    height: 28px;
+    background: #4169E1;  /* Royal blue for the number circles */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+.goal-card h3 {
+    color: #4169E1;  /* Royal blue for headings */
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.goal-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* User Flows Section */
+.user-flows {
+    margin-bottom: 4rem;
+}
+
+.user-flows h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.flow-section {
+    background: #F8F8FF;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.flow-text {
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.flow-text h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.flow-subtitle {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.flow-text p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.flow-images {
+    position: relative;
+}
+
+.flow-navigation {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+.nav-arrow {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-arrow:hover {
+    background: #F5F5F5;
+}
+
+.phone-screens {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.phone-screens img {
+    width: calc(33.333% - 0.667rem);
+    height: auto;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .flow-section {
+        padding: 1.5rem;
+    }
+
+    .phone-screens {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .phone-screens img {
+        width: 100%;
+    }
+}
+
+/* Add these to your existing styles */
+.screen-item {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.screens-grid {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.screen-item {
+    flex: 1;
+    width: calc(33.333% - 0.667rem); /* Equal width for all three items with gap consideration */
+}
+
+.screen-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+.nav-arrow {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-arrow:hover {
+    background: #F5F5F5;
+    transform: translateY(-1px);
+}
+
+.reflection {
+    margin-bottom: 6rem;
+}
+
+.reflection h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.reflection p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 1000px;
+}
+
+.reflection-images {
+    margin-top: 3rem;
+}
+
+.mockups-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* Top row - two large images */
+.mockup-item.large {
+    grid-column: span 2;
+    transform: none !important; /* Override any rotation for large images */
+}
+
+.mockup-item {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.mockup-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Add slight rotation ONLY to non-large mockups */
+.mockup-item:not(.large):nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.mockup-item:not(.large):nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.mockup-item:hover {
+    transform: scale(1.02) rotate(0);
+    z-index: 1;
+}
+
+/* Keep the responsive styles the same */
+@media (max-width: 768px) {
+    .mockups-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .mockup-item.large {
+        grid-column: span 2;
+    }
+}
+
+</style>
+<body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/img/logo.svg" alt="Logo">
+                    </a>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav">
+                    <a href="index.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="https://www.linkedin.com/in/mlan14/" target="_blank">LinkedIn</a>
+                </div>
+                <!-- Mobile Navigation -->
+                <button class="menu-toggle">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="mobile-nav">
+                    <a href="index.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="https://www.linkedin.com/in/mlan14/" target="_blank">LinkedIn</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="project-content">
+            <div class="back-link">
+                <a href="index.html">← Back</a>
+            </div>
+    
+            <h1>Way to drive</h1>
+            <p class="subtitle">Get an easy way to navigate safely, drive confidently</p>
+            
+            <div class="metadata">
+                <div class="metadata-item">
+                    <h3>Category</h3>
+                    <p>UI/UX Design, App Design</p>
+                </div>
+                <div class="metadata-item">
+                    <h3>Role</h3>
+                    <p>UI/UX Designer, Logo Designer</p>
+                </div>
+                <div class="metadata-item">
+                    <h3>Timeline</h3>
+                    <p>16 Weeks</p>
+                </div>
+                <div class="metadata-item">
+                    <h3>Award</h3>
+                    <p>Indigo Design Award Silver, London Design Award 2024 Gold</p>
+                </div>
+            </div>
+
+            <div class="project-hero">
+                <img src="assets/img/waytodrive/hero.jpg" alt="Way to Drive App Preview" class="hero-image">
+            </div>
+
+            <section class="project-overview">
+                <h2>Overview</h2>
+                <p>"Way to Drive!" is the ultimate app designed exclusively for Chinese tourists seeking a smooth and worry-free driving experience in the bustling San Francisco Bay Area. With a focus on ensuring compliance with local traffic regulations and enhancing safety, this app empowers users with a comprehensive set of tools to navigate unfamiliar roads confidently.</p>
+            </section>
+
+            <section class="project-background">
+                <h2>Project Background</h2>
+                <p>Visitors frequently struggle with understanding local traffic rules in foreign or unfamiliar places, often resulting in traffic accidents or citations. This confusion is caused by:</p>
+                
+                <div class="background-grid grid">
+                    <div class="col-4">
+                        <div class="background-card">
+                            <div class="number">1</div>
+                            <h3>LANGUAGE BARRIERS</h3>
+                            <p>Difficulty understanding road signs or instructions in a foreign language</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="background-card">
+                            <div class="number">2</div>
+                            <h3>CULTURAL DIFFERENCES</h3>
+                            <p>Lack of familiarity with local driving behaviors and etiquette</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="background-card">
+                            <div class="number">3</div>
+                            <h3>TIME CONSTRAINTS</h3>
+                            <p>Limited time to learn local traffic rules during short-term trips</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="research">
+                <h2>Research</h2>
+                <p>Data analysis, interviews, and a comprehensive survey involving 82 participants unveiled key insights into language barriers, difficulties with traffic signs, and the need for real-time assistance. Notably, while 70% recognized the importance of local traffic rule knowledge, 67% admitted to limited rule research.</p>
+                
+                <div class="research-stats">
+                    <img src="assets/img/waytodrive/research.png" alt="Research Statistics" class="research-image">
+                </div>
+            </section>
+
+            <section class="persona">
+                <h2>Persona</h2>
+                <div class="persona-content">
+                    <img src="assets/img/waytodrive/persona.png" alt="Research Statistics" class="research-image">
+                </div>
+            </section>
+
+            <section class="design-goal">
+                <h2>Design Goal</h2>
+                <div class="goal-cards grid">
+                    <div class="col-4">
+                        <div class="goal-card">
+                            <div class="number">1</div>
+                            <h3>INCREASE AWARENESS OF LOCAL TRAFFIC RULES</h3>
+                            <p>Help users develop an interest in learning local traffic regulations before driving, ensuring safer navigation.</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="goal-card">
+                            <div class="number">2</div>
+                            <h3>SIMPLIFY TRAFFIC SIGN RECOGNITION</h3>
+                            <p>Make it easier for users to recognize and understand local traffic signs, such as providing quick lessons while waiting in lanes</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="goal-card">
+                            <div class="number">3</div>
+                            <h3>BOOST CONFIDENCE IN CHALLENGING AREAS</h3>
+                            <p>Empower users with the confidence to navigate potentially dangerous areas, such as urban or high-traffic zones</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="design-challenges">
+                <h2>User Flows</h2>
+
+                <div class="challenge-block">
+                    <div class="challenge-content">
+                        <h3>Route Planner</h3>
+                        <p class="flow-subtitle">Seamlessly preview traffic rules before embarking on your journey or while en route.</p>
+                        <p>Users can access the route plan before commencing their trip to preview traffic rules and read details by clicking on each rule. As they begin navigation, when approaching traffic rules mentioned on the map, a popup window and audio alert remind users of the rule.</p>
+                    </div>
+
+                    <div class="challenge-screens">
+                        <div class="carousel-nav">
+                            <button class="nav-arrow prev">←</button>
+                            <button class="nav-arrow next">→</button>
+                        </div>
+                        <div class="screens-grid">
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-1/screen-1.png" alt="Route Planner Screen 1">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-1/screen-2.png" alt="Route Planner Screen 2">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-1/screen-3.png" alt="Route Planner Screen 3">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-1/screen-4.png" alt="Route Planner Screen 4">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-1/screen-5.png" alt="Route Planner Screen 5">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-1/screen-6.png" alt="Route Planner Screen 6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-block">
+                    <div class="challenge-content">
+                        <h3>Image Recognition</h3>
+                        <p class="flow-subtitle">Decode complex road signs with ease through our advanced image recognition technology.</p>
+                        <p>When the user sees the complex parking signs on the side, they can use the app to scan the rule and see the detail to avoid getting parking tickets.</p>
+                    </div>
+
+                    <div class="challenge-screens">
+                        <!-- <div class="carousel-nav">
+                            <button class="nav-arrow prev">←</button>
+                            <button class="nav-arrow next">→</button>
+                        </div> -->
+                        <div class="screens-grid">
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-2/screen-1.png" alt="Image Recognition Screen 1">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-2/screen-2.png" alt="Image Recognition Screen 2">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-2/screen-3.png" alt="Image Recognition Screen 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-block">
+                    <div class="challenge-content">
+                        <h3>Neighborhood Insights</h3>
+                        <p class="flow-subtitle">Stay ticket-free by exploring and setting alerts for nearby traffic rules</p>
+                        <p>Users can identify their surroundings to explore unique or critical local traffic rules, such as Street Sweeping, and set up alerts to prevent their vehicle from being towed</p>
+                    </div>
+
+                    <div class="challenge-screens">
+                        <!-- <div class="carousel-nav">
+                            <button class="nav-arrow prev">←</button>
+                            <button class="nav-arrow next">→</button>
+                        </div> -->
+                        <div class="screens-grid">
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-3/screen-1.png" alt="Neighborhood Insights Screen 1">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-3/screen-2.png" alt="Neighborhood Insights Screen 2">
+                            </div>
+                            <div class="screen-item">
+                                <img src="assets/img/waytodrive/flow-3/screen-3.png" alt="Neighborhood Insights Screen 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reflection">
+                <h2>Reflection & Future Improvements</h2>
+                <p>Way to Drive showcased the value of blending functionality with cultural sensitivity. Designing for international users required creating intuitive workflows while addressing specific pain points like language and cultural adaptation. Moving forward, I aim to enhance the app's capabilities by incorporating more advanced machine learning models.</p>
+                
+                <div class="reflection-images">
+                    <div class="mockups-grid">
+                        <!-- Top row - two large images -->
+                        <div class="mockup-item large">
+                            <img src="assets/img/waytodrive/reflection-1.png" alt="Way to Drive App Interface with Map">
+                        </div>
+                        <div class="mockup-item large">
+                            <img src="assets/img/waytodrive/reflection-2.png" alt="Way to Drive App Interface with Camera">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="section">
+                    <div class="web-image">
+                        <img src="assets/img/waytodrive/end.jpg" alt="Way to Drive App Interface 3">
+                    </div>
+                </div>
+    
+            </section>
+            
+            <div class="more-projects">
+                <div class="more-projects-header">
+                    <h2>More Project</h2>
+                    <!-- <div class="project-nav">
+                        <button class="nav-arrow">←</button>
+                        <button class="nav-arrow">→</button>
+                    </div> -->
+                </div>
+                <div class="projects-grid">
+                    <a href="pickymon.html" class="project-card">
+                        <img src="assets/img/cover-pickymon.png" alt="Yard Management System">
+                        <h3>Pickymon</h3>
+                        <p>Graphic Design, Illustration</p>
+                    </a>
+                    <a href="yms.html" class="project-card">
+                        <img src="assets/img/cover-yms.png" alt="Way to drive">
+                        <h3>Yard Management System</h3>
+                        <p>Web Design, SaaS</p>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+
+    <section class="contact">
+        <h1>Let's start creating together</h1>
+        <a href="#" class="lets-talk-btn">Let's Talk <span>→</span></a>
+    </section>
+
+    <footer>
+        <div>
+            <p>Designed by Meng Lan 2024</p>
+            <nav>
+                <a href="index.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+                <a href="https://www.linkedin.com/in/mlan14/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://dribbble.com/mlan14" target="_blank" rel="noopener">Dribbble</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Add this script before closing body tag -->
+    <script>
+        const carousels = document.querySelectorAll('.challenge-screens');
+
+        carousels.forEach(carousel => {
+            const screens = carousel.querySelector('.screens-grid');
+            const items = carousel.querySelectorAll('.screen-item');
+            const prevBtn = carousel.querySelector('.prev');
+            const nextBtn = carousel.querySelector('.next');
+            
+            let currentGroup = 0;
+            const itemsPerGroup = 3; // Show 3 items at a time
+            const totalGroups = Math.ceil(items.length / itemsPerGroup);
+
+            // Function to show a group of screens
+            function showGroup(groupIndex) {
+                const startIndex = groupIndex * itemsPerGroup;
+                
+                // Hide all items first
+                items.forEach(item => {
+                    item.style.display = 'none';
+                });
+
+                // Show only the items for current group
+                for(let i = startIndex; i < startIndex + itemsPerGroup && i < items.length; i++) {
+                    items[i].style.display = 'block';
+                }
+
+                // Update current group
+                currentGroup = groupIndex;
+
+                // Update navigation visibility
+                prevBtn.style.visibility = currentGroup === 0 ? 'hidden' : 'visible';
+                nextBtn.style.visibility = currentGroup >= totalGroups - 1 ? 'hidden' : 'visible';
+            }
+
+            // Previous button click handler
+            prevBtn.addEventListener('click', () => {
+                if (currentGroup > 0) {
+                    showGroup(currentGroup - 1);
+                }
+            });
+
+            // Next button click handler
+            nextBtn.addEventListener('click', () => {
+                if (currentGroup < totalGroups - 1) {
+                    showGroup(currentGroup + 1);
+                }
+            });
+
+            // Set initial styles
+            screens.style.display = 'flex';
+            screens.style.gap = '1rem';
+            screens.style.flexWrap = 'wrap';
+
+            items.forEach(item => {
+                item.style.flex = '1 0 calc(33.333% - 0.667rem)';
+            });
+
+            // Show first group initially
+            showGroup(0);
+        });
+    </script>
+</body>
+</html> 
