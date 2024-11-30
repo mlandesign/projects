@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickymon - Project Details</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
+</head>
+<style>
+    /* About LSO and My Role sections */
+.about-lso{
+    padding: 3rem;
+    margin: 2rem 0;
+    background: #F8F9FA;
+    border-radius: 12px;
+}
+
+.about-lso h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+.about-lso p,{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .about-lso{
+        padding: 2rem;
+    }
+    
+    .about-lso h2{
+        font-size: 20px;
+    }
+    
+    .about-lso p {
+        font-size: 15px;
+    }
+}
+
+/* Brand Showcase Grid */
+.brand-showcase {
+    margin: 4rem 0;
+}
+
+.brand-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.brand-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.brand-item {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+/* Remove the max-width and margin constraints */
+.brand-item.single {
+    flex: 2; /* Takes up the same width as two items */
+}
+
+.brand-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.brand-item:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .brand-row {
+        flex-direction: column;
+    }
+    
+    .brand-item.single {
+        flex: 1; /* Reset to full width on mobile */
+    }
+}
+
+/* Results Section */
+.results {
+    margin: 4rem 0;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center; /* This centers items vertically */
+}
+
+.results-text {
+    padding: 2rem 0;
+}
+
+.results-text h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.results-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+.results-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .results-text {
+        padding: 0;
+    }
+}
+
+</style>
+<body class="preload">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/logo.svg" alt="Logo">
+                </a>
+            </div>
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <a href="index.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank">Resume</a>
+                <a href="https://www.linkedin.com/in/mlan14/" target="_blank">LinkedIn</a>
+            </div>
+            <!-- Mobile Navigation -->
+            <button class="menu-toggle">
+                <span class="material-icons">menu</span>
+            </button>
+            <div class="mobile-nav">
+                <a href="index.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank">Resume</a>
+                <a href="https://www.linkedin.com/in/mlan14/" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="project-container">
+        <div class="back-link">
+            <a href="index.html">← Back</a>
+        </div>
+
+        <h1>LSO Branding Identity</h1>
+        <p class="subtitle">Modernizing LSO’s visual identity to enhance brand recognition and trust in the logistics industry.</p>
+        
+        <div class="metadata">
+            <div class="metadata-item">
+                <h3>Category</h3>
+                <p>Brand Design, Branding Identity</p>
+            </div> 
+            <div class="metadata-item">
+                <h3>Role</h3>
+                <p>Graphic Designer, UIUX Designer</p>
+            </div>
+            <div class="metadata-item">
+                <h3>Teammates</h3>
+                <p>Meng Lan, Gabriela Hernandez</p>
+            </div>
+            <div class="metadata-item">
+                <h3>Timeline</h3>
+                <p>3 weeks</p>
+            </div>
+            
+        </div>
+
+        <div class="project-hero">
+            <img src="assets/img/lso/hero.jpg" alt="LSO hero image">
+        </div>
+
+        <div class="project-content">
+            <section class="about-lso">
+                <h2>About LSO</h2>
+                <p>LSO is a regional parcel delivery company headquartered in Austin, Texas, with over 25 years of experience. Specializing in fast, reliable, and flexible shipping solutions, LSO serves the southern United States, covering 100% of Texas and significant portions of Oklahoma, Louisiana, Missouri, and Arkansas. With a network of 27 locations and a commitment to exceptional customer service, LSO combines courier speed, carrier discipline, and partnership-level support to deliver affordable and efficient parcel solutions tailored to businesses and individuals.</p>
+            </section>
+
+            <section class="my-role">
+                <h2>My Role</h2>
+                <p>As the designer for LSO’s branding identity, my role was to reimagine and modernize the company’s visual identity to align with its evolving business goals and market positioning. I led the creation of a cohesive design system, including the logo, color palette, typography, and visual assets, ensuring consistency across all brand touchpoints. Additionally, I focused on enhancing the brand’s professional image to build trust with clients and improve brand recognition in a competitive logistics market.</p>
+            </section>
+
+            <div class="brand-showcase">
+                <div class="brand-grid">
+                    <div class="brand-row">
+                        <div class="brand-item">
+                            <img src="assets/img/lso/logo.png" alt="LSO Logo">
+                        </div>
+                        <div class="brand-item">
+                            <img src="assets/img/lso/logo-grid.png" alt="LSO Logo Grid">
+                        </div>
+                    </div>
+                    
+                    <div class="brand-row">
+                        <div class="brand-item single">
+                            <img src="assets/img/lso/logo-color.png" alt="LSO Color Variations">
+                        </div>
+                    </div>
+
+                    <div class="brand-row">
+                        <div class="brand-item">
+                            <img src="assets/img/lso/color.png" alt="LSO Color Grid">
+                        </div>
+                        <div class="brand-item">
+                            <img src="assets/img/lso/font.png" alt="LSO Logo Grid">
+                        </div>
+                    </div>
+                    <div class="brand-row">
+                        <div class="brand-item">
+                            <img src="assets/img/lso/letter.png" alt="LSO Color Grid">
+                        </div>
+                        <div class="brand-item">
+                            <img src="assets/img/lso/social.png" alt="LSO Logo Grid">
+                        </div>
+                    </div>    
+                    <div class="brand-row">
+                        <div class="brand-item">
+                            <img src="assets/img/lso/paper.png" alt="LSO Color Grid">
+                        </div>
+                        <div class="brand-item">
+                            <img src="assets/img/lso/environment.png" alt="LSO Logo Grid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results">
+                <div class="results-grid">
+                    <div class="results-text">
+                        <h2>Results</h2>
+                        <p>The rebranding of LSO led to a 30% increase in brand recognition and significantly improved client trust and engagement. The updated visual identity enhanced LSO’s competitive edge, helping the company solidify its reputation as a reliable and professional logistics provider in the southern United States.</p>
+                    </div>
+                    <div class="results-image">
+                        <img src="assets/img/lso/car.png" alt="LSO Car">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="web-image">
+                    <img src="assets/img/lso/system.png" alt="LSO System">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="more-projects">
+            <div class="more-projects-header">
+                <h2>More Project</h2>
+                <!-- <div class="project-nav">
+                    <button class="nav-arrow">←</button>
+                    <button class="nav-arrow">→</button>
+                </div> -->
+            </div>
+            <div class="projects-grid">
+                <a href="yms.html" class="project-card">
+                    <img src="assets/img/cover-yms.png" alt="Yard Management System">
+                    <h3>Yard Management System</h3>
+                    <p>Web Design, SaaS</p>
+                </a>
+                <a href="waytodrive.html" class="project-card">
+                    <img src="assets/img/cover-waytodrive.png" alt="Way to drive">
+                    <h3>Way to drive</h3>
+                    <p>App, Interaction Design</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <section class="contact">
+        <h1>Let's start creating together</h1>
+        <a href="#" class="lets-talk-btn">Let's Talk <span>→</span></a>
+    </section>
+
+    <footer>
+        <div>
+            <p>Designed by Meng Lan 2024</p>
+            <nav>
+                <a href="index.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="https://drive.google.com/file/d/1-tQKIA-VN73FQQcck2pSiNM1PmIaoV1A/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+                <a href="https://www.linkedin.com/in/mlan14/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://dribbble.com/mlan14" target="_blank" rel="noopener">Dribbble</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 

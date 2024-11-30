@@ -10,6 +10,81 @@
     
     <!-- Add video popup styles -->
     <style>
+        /* Intro Section */
+.intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text h1 {
+    font-size: 64px;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.intro-text p {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.intro-image {
+    flex-shrink: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+    .intro-text h1 {
+        font-size: 48px;
+    }
+    
+    .intro-text p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+    
+    .intro-text h1 {
+        font-size: 40px;
+    }
+    
+    .intro-text p {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .intro-image img {
+        max-width: 200px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-text h1 {
+        font-size: 32px;
+    }
+    
+    .intro-image img {
+        max-width: 160px !important;
+    }
+}
+
         .popup {
             display: none;
             position: fixed;
@@ -50,6 +125,96 @@
         .close-popup:hover {
             color: #000;
         }
+
+        .lets-talk-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 32px;
+    border: 1px solid #000;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.lets-talk-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Update the contact section button to match */
+.contact .lets-talk-btn {
+    margin-top: 24px;
+}
+
+.passion-projects {
+    margin: 6rem 0;
+    max-width: 100%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.navigation-arrows {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-arrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background: #000;
+    color: #fff;
+}
+
+.projects-scroll {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.projects-scroll .project-card {
+    width: 100%;
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .projects-scroll {
+        grid-template-columns: repeat(1, 1fr);
+        overflow-x: auto;
+    }
+    
+    .projects-scroll .project-card {
+        min-width: 300px;
+    }
+}
     </style>
 </head>
 <body class="preload">
@@ -81,8 +246,18 @@
     </header>
 
     <main>
-        <h1>Hello, I'm Meng,<br> a UI/UX Designer</h1>
-        <p>With a keen eye for aesthetics and a passion for crafting user-centric experiences, I specialize in transforming ideas into intuitive and impactful digital designs.</p>
+        <div class="intro-section">
+            <div class="intro-text">
+                <h1 style="color:black;"">Hello, I'm Meng,<br> a UI/UX Designer</h1>
+                <p>With a keen eye for aesthetics and a passion for crafting user-centric experiences, I specialize in transforming ideas into intuitive and impactful digital designs.</p>
+                <a href="#" class="lets-talk-btn">Let's Talk ↗</a>
+            </div>
+            <div class="intro-image">
+                <img src="assets/img/profile-icon.png" alt="Meng's Profile Illustration" style="max-width: 300px;">
+            </div>
+        </div>
+
+        
 
         <div class="project-grid">
             <a href="yms.html" class="project-card">
@@ -110,20 +285,21 @@
                 <h3>Cubework App - Coming Soon</h3>
                 <p>App Design, Front-End Development</p>
             </a> -->
-            <a href="mystorybook.html" class="project-card">
-                <img src="assets/img/cover-mystorybook.png" alt="My Story Book">
-                <h3>My Story Book - Award Winning</h3>
-                <p>App Design, game design</p>
+            <a href="lso.html" class="project-card">
+                <img src="assets/img/cover-lso.png" alt="My Story Book">
+                <h3>LSO Branding Identity</h3>
+                <p>Branding Identity, Graphic Design</p>
             </a>
-            <a href="pickymon.html" class="project-card">
-                <img src="assets/img/cover-pickymon.png" alt="Pickymon">
-                <h3>Pickymon</h3>
-                <p>Graphic Design, Illustration</p>
-            </a>
+            
             <a href="#" class="project-card" onclick="openVideoPopup(event)">
                 <img src="assets/img/cover-expedia.png" alt="Expedia Promo">
                 <h3>Expedia Promo Video</h3>
                 <p>Animation, Illustration</p>
+            </a>
+            <a href="#" class="project-card">
+                <img src="assets/img/cover-designsystem.png" alt="Designs">
+                <h3>UNIS Design System - Coming Soon</h3>
+                <p>UIUX Design, Design System</p>
             </a>
         </div>
 
@@ -137,7 +313,32 @@
                 </video>
             </div>
         </div>
+
+        <div class="passion-projects">
+            <div class="section-header">
+                <h2>Passion Projects</h2>
+                <!-- <div class="navigation-arrows">
+                    <button class="nav-arrow prev" aria-label="Previous projects">←</button>
+                    <button class="nav-arrow next" aria-label="Next projects">→</button>
+                </div> -->
+            </div>
+            <div class="projects-scroll">
+                <a href="mystorybook.html" class="project-card">
+                    <img src="assets/img/cover-mystorybook.png" alt="My Story Book">
+                    <h3>My Story Book - Award Winning</h3>
+                    <p>App Design, game design</p>
+                </a>
+                <a href="pickymon.html" class="project-card">
+                    <img src="assets/img/cover-pickymon.png" alt="Pickymon">
+                    <h3>Pickymon</h3>
+                    <p>Graphic Design, Illustration</p>
+                </a>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
     </main>
+
+    
 
     <section class="contact">
         <h1>Let's start creating together</h1>
@@ -158,6 +359,28 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollContainer = document.querySelector('.projects-scroll');
+            const prevButton = document.querySelector('.nav-arrow.prev');
+            const nextButton = document.querySelector('.nav-arrow.next');
+
+            nextButton.addEventListener('click', () => {
+                scrollContainer.scrollBy({
+                    left: 400,
+                    behavior: 'smooth'
+                });
+            });
+
+            prevButton.addEventListener('click', () => {
+                scrollContainer.scrollBy({
+                    left: -400,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
